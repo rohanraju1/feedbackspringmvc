@@ -5,8 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
- <title>View Faculty</title>
-   
+ <title>Update Faculty </title>
     <link href="<c:url value="/resources/css/fac.css" />" rel="stylesheet">
 </head>
 <body>
@@ -39,20 +38,39 @@
            <div id="mainContent"> 
             
              <div id="subContent">
-              <form action="./viewfaculty" class="form2" method="get">
-                <table align="center" cellspacing="10">
-                       <th><u>View Faculty Details</u></th>
-                       
-                       <tr>
-                            <td><input type="submit" value="Get Details"></td>   
-                       </tr>
-                   </table>
-               </form> 
-             </div> 
+                <form action="./updateFaculty" method="post">
+                 
+                    <table align="center" cellspacing="10">
+                    <th><u>Update Faculty Skills </u></th>
+                    <tr>
+                     <td>Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="Upid"></td>
+                     <td>Name &nbsp;&nbsp;<input type="text" name="Upname"></td>
+                    </tr>
+                    <tr>
+                                            <td>Update Skills
+                          <ol type="none">
+                                    <li><input type="checkbox" name="Upskills" value="Java">Java</li>
+                                    <li><input type="checkbox" name="Upskills" value="Jee">JEE</li>
+                                    <li><input type="checkbox" name="Upskills" value="Sql">SQL</li>
+                                    <li><input type="checkbox" name="Upskills" value="WebDev">WebDev</li>
+                                    <li><input type="checkbox" name="Upskills" value="FrameWorks">Frameworks</li>
+                                </ol>
+                                <br>
+                     </td>
+                    </tr>
+                    <tr>
+                       <td><input type="submit" value="Update"></td>
+                    </tr>
+                    </table>
                 
+                
+                
+                </form>
+                </div>
            </div>
 
 
 
 </body>
 </html>
+

@@ -1,5 +1,7 @@
 package org.caps.dev.feeback.service;
 
+import java.util.List;
+
 import org.caps.dev.feeback.beans.Employee;
 import org.caps.dev.feeback.beans.Faculty;
 import org.caps.dev.feeback.dao.DaoInf;
@@ -19,7 +21,6 @@ public class FacultyService {
 	{
 		boolean facStatus=false;
 
-        System.out.println("check 3");	
 		boolean res = dao.getEmployeeDetails(facId, facName);
 		
 		String skill=String.join(",", skills);
@@ -28,7 +29,6 @@ public class FacultyService {
 		if(res)
 		{
 
-            System.out.println("check 4");
 			faculty.setFacultyId(facId);
 			faculty.setSkillSet(skill);
 			facStatus=dao.addFaculty(faculty);
@@ -38,6 +38,27 @@ public class FacultyService {
 		return facStatus;
 	}
 	
+	public List<Employee> getFacultyList() 
+	{
+		List<Employee> lst=dao.viewFacultyAll();
+		return lst;
+	}
+	
+	
+	public boolean updateFaculty(String[] skillSet,int facultyId)
+	{
+		boolean upStatus=false;
+		
+		String skills=String.join(",", skillSet);
+		
+		faculty.setFacultyId(facultyId);
+		faculty.setSkillSet(skills);
+		System.out.println(facultyId);
+		System.out.println(skills);
+		upStatus=dao.updateFacultyDetails(faculty);
+		
+		return upStatus;
+	}
 	
 	
 }

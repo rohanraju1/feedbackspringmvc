@@ -23,7 +23,7 @@
                   <div class="navbar">
                    
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="/HomeAdmin">Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <a href="./HomeTRAdmin">Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <div class="dropdown">
                             <button class="dropbtn">FacultySkillMaintenance 
                               <i class="fa fa-caret-down"></i>
@@ -31,7 +31,7 @@
                             <div class="dropdown-content">
                               <a href="./AddFaculty">AddFaculty</a>
                               <a href="./ViewFaculty">ViewFaculty</a>
-                              <a href="#">UpdateFaculty</a>
+                              <a href="./UpdateFaculty">UpdateFaculty</a>
                             </div>
                           </div> 
                   </div>

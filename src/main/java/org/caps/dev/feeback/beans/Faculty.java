@@ -50,6 +50,11 @@ public class Faculty implements Serializable{
 	public void setSkillSet(String skillSet) {
 		this.skillSet = skillSet;
 	}
+
+	@Override
+	public String toString() {
+		return "Faculty [pid=" + pid + ", facultyId=" + facultyId + ", skillSet=" + skillSet + "]";
+	}
 	
 	
 	

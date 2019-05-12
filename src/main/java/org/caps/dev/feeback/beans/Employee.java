@@ -51,9 +51,14 @@ public class Employee implements Serializable {
 	public String getRole() {
 		return role;
 	}
-
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [employee_ID=" + employee_ID + ", employeeName=" + employeeName + ", password=" + password
+				+ ", role=" + role + "]";
 	}
 	
 	

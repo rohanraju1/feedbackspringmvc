@@ -1,11 +1,14 @@
 package org.caps.dev.feeback.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import org.caps.dev.feeback.beans.Course;
 import org.caps.dev.feeback.beans.Employee;
 import org.caps.dev.feeback.beans.Faculty;
 import org.caps.dev.feeback.dbutils.JpaHibernateUtils;
@@ -34,7 +37,6 @@ public class DaoImpl implements DaoInf {
 			
 			etx.commit();
 		} catch (Exception e) {
-
 			etx.rollback();
                 e.printStackTrace();			
 		}
@@ -112,6 +114,85 @@ public class DaoImpl implements DaoInf {
                 e.printStackTrace();			
 		}
 		return addStatus;
+	}
+
+
+	@Override
+	public List<Employee> viewFacultyAll() {
+
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction etx=null;
+		List empList=null;
+		try {
+			emf=JpaHibernateUtils.getEMF();
+			em=emf.createEntityManager();
+			etx=em.getTransaction();
+			etx.begin();
+		
+		Query query=em.createNativeQuery("SELECT * FROM employee_master WHERE Employee_ID IN (SELECT Faculty_Id FROM faculty_skill)");	
+		empList= query.getResultList();
+		etx.commit();
+		}
+		catch (Exception e) {
+           e.printStackTrace();
+           etx.rollback();
+		}
+		
+		return empList;
+	}
+
+	@Override
+	public boolean updateFacultyDetails(Faculty faculty) {
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction etx=null;
+		boolean upStatus=false;
+		try {
+			emf=JpaHibernateUtils.getEMF();
+			em=emf.createEntityManager();
+			etx=em.getTransaction();
+			etx.begin();
+			
+			Query query=em.createNativeQuery("update faculty_skill f set f.Skill_Set=?1 where f.Faculty_Id=?2 ");
+			
+			query.setParameter(1,faculty.getSkillSet());
+			query.setParameter(2,faculty.getFacultyId());
+			
+			int count=query.executeUpdate();
+			System.out.println(count);
+			if(count>0)
+			{
+			  upStatus=true;	 
+			}
+			etx.commit();
+		}
+		catch (Exception e) {
+              e.printStackTrace();
+              etx.rollback();
+		}
+		return upStatus;
+	}
+
+	@Override
+	public boolean addCourse(Course addCourse) {
+       
+		
+		
+		
+		return false;
+	}
+
+	@Override
+	public List<Course> viewCourses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateCourse(Course updateCourse) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	

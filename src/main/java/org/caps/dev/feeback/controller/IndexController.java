@@ -32,17 +32,17 @@ public class IndexController {
 		{
 			String role=ls.loginValidate(employeeId, Password);
 
-			if(role.equals("TrAdmin"))
+			if(role.equals("TRAdmin"))
 			{
 				return new ModelAndView("HomeTrAdmin");
 			}
-			if(role.equals("TrCoord"))
+			if(role.equals("TRCord"))
 			{
-
+				return new ModelAndView("HomeTrAdmin");
 			}
-			if(role.equals("TrParticipant"))
+			if(role.equals("TRParticipant"))
 			{
-
+				return new ModelAndView("HomeTrAdmin");
 			}
 			else 
 			{
@@ -61,34 +61,5 @@ public class IndexController {
 	
 	
 	
-	/*@Autowired
-	private FacultyService fs;
-	@RequestMapping(value="/addFaculty",method=RequestMethod.POST)
-	public ModelAndView addFaculty(@RequestParam("") int facultyId,@RequestParam("") String facultyName,@RequestParam("") String[] skills)
-	{
-            System.out.println("check 1");           
-		if(facultyId!=0&&facultyName!=null&&skills!=null)
-		{
 
-            System.out.println("check 2");
-			
-	        boolean stat=fs.facultyValidate(facultyId, facultyName,skills);		
-			
-	        if(stat)
-	        {
-	        	System.out.println("added faculty");
-	        }
-	        else 
-	        {
-	        	System.out.println(" not added faculty");
-	        }
-		}
-		else 
-		{
-			System.out.println("null values");
-		}
-    	
-   return new ModelAndView("redirect:/0FacultySkillMain");
-	}
-*/
 }
