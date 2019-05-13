@@ -12,10 +12,10 @@ public class CourseService
 {
 
 	@Autowired
-	DaoInf dao;
+	private DaoInf dao;
 	
 	@Autowired
-	Course course;
+	private  Course course;
 	
 	
 	public boolean addCourse(int courseID,String courseName,int noOfDays)

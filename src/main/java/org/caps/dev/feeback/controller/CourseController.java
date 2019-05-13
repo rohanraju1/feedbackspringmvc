@@ -17,7 +17,7 @@ public class CourseController
 {
 
 	@Autowired
-	CourseService courseServ;
+	private CourseService courseServ;
 	
 	@RequestMapping(value="/addCourseView",method=RequestMethod.GET)
 	public ModelAndView viewAddCourse()
@@ -73,16 +73,16 @@ public class CourseController
 	
 	
 	 @RequestMapping(value="/updateCourse")
-     public ModelAndView updateCourseDetails(@RequestParam("ucid") int courseId,@RequestParam("ucname") String courseName,@RequestParam("ucdays") int noOfDays)
+     public ModelAndView updateCourseDetails(@RequestParam("Ucid") int courseId,@RequestParam("Ucname") String courseName,@RequestParam("Ucdays") int noOfDays)
      {   
            boolean updateStatus=courseServ.updateCourseDetails(courseId,courseName,noOfDays);
            if(updateStatus)
            {
            	System.out.println("Updated");
-           	return new ModelAndView("redirect:UpdateFaculty");
+           	return new ModelAndView("redirect:updateCourse");
            }
            System.out.println("not Updated");
-   	  return new ModelAndView("redirect:UpdateFaculty");
+   	  return new ModelAndView("redirect:updateCourse");
      }
 	
 	

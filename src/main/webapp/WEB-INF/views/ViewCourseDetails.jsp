@@ -27,11 +27,11 @@
           <td>No_of_days</td>         
         </tr>                       <!-- Iterate the List Object  data here  -->
         
-        <c:forEach items="${clist}" var="list"> 
+        <c:forEach items="${cList}" var="list"> 
    <tr>
-     <td width="500">${clist[0]}</td>
-     <td width="500">${clist[1]}</td>
-     <td width="500">${clist[2]}</td>
+     <td width="500">${list[0]}</td>
+     <td width="500">${list[1]}</td>
+     <td width="500">${list[2]}</td>
    </tr>      
    </c:forEach>
     </table>

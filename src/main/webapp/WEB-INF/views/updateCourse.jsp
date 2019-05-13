@@ -37,7 +37,7 @@
           <div id="mainContent"> 
             
             <div id="subContent">
-                <form action="updateCourse" method="post">
+                <form action="./updateCourse" method="post">
                
                     <table align="center" cellspacing="10">
                       <tr>
@@ -48,17 +48,17 @@
                     
                      <tr>
                      <td>
-                     Course Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="ucid"/>
+                     Course Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="Ucid"/>
                      </td>
                    </tr>
                    <tr>
                      <td>
-                       Course Name:&nbsp;<input type="text" name="ucname"/>
+                       Course Name:&nbsp;<input type="text" name="Ucname"/>
                      </td>
                    </tr>
                    <tr>
                      <td>
-                       No.of.Days:&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="ucdays"/>
+                       No.of.Days:&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="Ucdays"/>
                        <br><br>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      </td> 

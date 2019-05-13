@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
   <title>Course Maintainance</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/fac"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/fac.css"/>"/>
 </head>
 <body>
         <header>

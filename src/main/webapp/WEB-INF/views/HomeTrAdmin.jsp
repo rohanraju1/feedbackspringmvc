@@ -32,7 +32,6 @@
 
                    </div>
                   <br>
-                        <a href="logout">Logout</a>
             </nav>
 </body>
 </html>
