@@ -26,8 +26,7 @@
                     <ol class="nav_list">
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <li><a href="./addFacultyView">Faculty Skill Maintainance</a></li>&nbsp;&nbsp;&nbsp;
-                        <li><a href="/Course/addCourse">Course Maintainance</a></li>&nbsp;&nbsp;&nbsp;
-                        <li><a href="#">FeedBack Report</a></li>&nbsp;&nbsp;&nbsp;
+                        <li><a href="./addCourseView">Course Maintainance</a></li>&nbsp;&nbsp;&nbsp;
                  </ol>  
                    
 

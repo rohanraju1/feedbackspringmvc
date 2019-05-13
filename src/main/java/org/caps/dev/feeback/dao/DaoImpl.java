@@ -177,22 +177,101 @@ public class DaoImpl implements DaoInf {
 	@Override
 	public boolean addCourse(Course addCourse) {
        
+	boolean addStatus=false;
 		
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction etx=null;
+		try {
+			emf=JpaHibernateUtils.getEMF();
+			em=emf.createEntityManager();
+			etx=em.getTransaction();
+			etx.begin();
+			
+	  Query query = em
+					.createNativeQuery("insert into course_master values(?1,?2,?3)");
+		 query.setParameter(1,addCourse.getCourseId());	 
+	  query.setParameter(2,addCourse.getCourseName());
+			 query.setParameter(3,addCourse.getNoOfDays());
+			 
+			 int count=query.executeUpdate();
+			 
+			 if(count>0)
+			 {
+				 System.out.println(count);
+				 addStatus=true;
+			 }
+			 
+			etx.commit();
+		} 
+		catch (Exception e) {
+			etx.rollback();
+                e.printStackTrace();			
+		}
+		return addStatus;
 		
-		
-		return false;
 	}
 
+	
 	@Override
 	public List<Course> viewCourses() {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction etx=null;
+		List<Course> courseList=null;
+		try {
+			emf=JpaHibernateUtils.getEMF();
+			em=emf.createEntityManager();
+			etx=em.getTransaction();
+			etx.begin();
+		
+		Query query=em.createNativeQuery("SELECT * FROM course_master");	
+		courseList= query.getResultList();
+		etx.commit();
+		}
+		catch (Exception e) {
+           e.printStackTrace();
+           etx.rollback();
+		}
+		
+		return courseList;
 	}
 
+	
+	
 	@Override
 	public boolean updateCourse(Course updateCourse) {
-		// TODO Auto-generated method stub
-		return false;
+
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction etx=null;
+		boolean upStatus=false;
+		try {
+			emf=JpaHibernateUtils.getEMF();
+			em=emf.createEntityManager();
+			etx=em.getTransaction();
+			etx.begin();
+			
+			Query query=em.createNativeQuery("Update course_master set No_of_Days=?1 where Course_ID=?2 and Course_Name=?3");
+			
+			query.setParameter(1,updateCourse.getNoOfDays());
+			query.setParameter(2,updateCourse.getCourseId());
+			query.setParameter(3,updateCourse.getCourseName());
+			
+			int count=query.executeUpdate();
+			System.out.println(count);
+			if(count>0)
+			{
+			  upStatus=true;	 
+			}
+			etx.commit();
+		}
+		catch (Exception e) {
+              e.printStackTrace();
+              etx.rollback();
+		}
+		return upStatus;
+		
 	}
 
 	

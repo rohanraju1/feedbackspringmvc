@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <title>Course Maintainance</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/fac"/>"/>
+<title>Course Maintainance</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/fac.css"/>"/>
 </head>
 <body>
         <header>
@@ -37,36 +37,40 @@
           <div id="mainContent"> 
             
             <div id="subContent">
-               <form action="./addCourse" method="post" >
-            
-                   <table align="center" cellspacing="10">
-                <th> Course Maintainance  </th>
+                <form action="updateCourse" method="post">
+               
+                    <table align="center" cellspacing="10">
+                      <tr>
+                        <td align="center">
+                          <strong><u>Update Course</u></strong>     
+                          </td>
+                      </tr>
+                    
                      <tr>
-                       <td align="center">
-                         <strong><u>Add Course</u></strong>     
-                         </td>
-                     </tr>
-                   
-                   <tr>
                      <td>
-                     Course Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="cid"/>
+                     Course Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="ucid"/>
                      </td>
                    </tr>
                    <tr>
                      <td>
-                       Course Name:&nbsp;<input type="text" name="cname"/>
+                       Course Name:&nbsp;<input type="text" name="ucname"/>
                      </td>
                    </tr>
                    <tr>
                      <td>
-                       No.of.Days:&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="cdays"/>
+                       No.of.Days:&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="ucdays"/>
                        <br><br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" value="Add Course"/>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      </td> 
                      </tr>
-                   </table>
-              </form>
-               </div>
+                    <tr>
+              <td>
+                  <input type="submit" value="Update Course">
+              </td>
+          </tr>
+                    </table>
+               </form> 
+               
           </div>
   
 </body>
